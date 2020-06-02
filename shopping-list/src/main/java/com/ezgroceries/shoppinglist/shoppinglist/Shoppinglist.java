@@ -1,20 +1,22 @@
 package com.ezgroceries.shoppinglist.shoppinglist;
 
+import java.util.UUID;
+
 public class Shoppinglist {
 
-    private String shoppingListId;
+    private UUID shoppingListId;
     private String name;
 
-    public Shoppinglist(String shoppingListId, String name){
-        this.shoppingListId = shoppingListId;
+    public Shoppinglist(String name){
         this.name = name;
+        shoppingListId = UUID.randomUUID();
     }
 
-    public String getShoppingListId() {
+    public UUID getShoppingListId() {
         return shoppingListId;
     }
 
-    public void setShoppingListId(String shoppingListId) {
+    public void setShoppingListId(UUID shoppingListId) {
         this.shoppingListId = shoppingListId;
     }
 
