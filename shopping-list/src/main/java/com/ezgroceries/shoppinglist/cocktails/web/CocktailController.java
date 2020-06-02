@@ -1,10 +1,10 @@
-package cocktails.web;
+package com.ezgroceries.shoppinglist.cocktails.web;
 
-import cocktails.CocktailResource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 
 import java.util.Arrays;
 import java.util.List;
