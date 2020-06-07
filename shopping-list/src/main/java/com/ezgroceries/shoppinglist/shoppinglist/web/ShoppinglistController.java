@@ -13,6 +13,9 @@ import java.util.UUID;
 @RestController
 public class ShoppinglistController {
 
+    private List<Shoppinglist> list = getDummyShoppinlist();
+
+
     //Create shopping list
     @PostMapping(value = "/shopping-lists")
     @ResponseStatus(HttpStatus.CREATED) // 201 return code
@@ -29,16 +32,39 @@ public class ShoppinglistController {
 
     //Return a shopping list
     @GetMapping(value = "/shopping-lists/{listId}")
-    public Shoppinglist getShoppinglist(@PathVariable UUID listId) {
-        return getDummyShoppinlist();
+    public Shoppinglist findShoppinglist(@PathVariable UUID listId) {
+        Shoppinglist returnlist = null;
+        for (Shoppinglist shl : list) {
+            if (shl.getShoppingListId().equals(listId)) {
+                returnlist = shl;
+            }
+        }
+        return returnlist;
     }
 
 
 
-    private Shoppinglist getDummyShoppinlist() {
-        return new Shoppinglist(
+    //Return all shopping lists
+    @GetMapping(value = "/shopping-lists")
+    public List<Shoppinglist> getShoppinglists() {
+        return list;
+    }
+
+
+
+    private List<Shoppinglist> getDummyShoppinlist() {
+        return Arrays.asList(
+                new Shoppinglist(
                         UUID.fromString("90689338-499a-4c49-af90-f1e73068ad4f"),"Stephanie's birthday",
-                        Arrays.asList("Triple sec", "Lime juice", "Salt","Blue Curacao"));
+                        Arrays.asList("Triple sec", "Lime juice", "Salt","Blue Curacao")
+                    ),
+                new Shoppinglist(
+                        UUID.fromString("6c7d09c2-8a25-4d54-a979-25ae779d2465"),"My Birthday",
+                        Arrays.asList("Triple sec", "Lime juice", "Salt","Blue Curacao")
+                    )
+        );
     }
+
+
 
 }
