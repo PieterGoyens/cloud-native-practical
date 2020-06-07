@@ -1,14 +1,15 @@
 package com.ezgroceries.shoppinglist.shoppinglist;
 
-import com.ezgroceries.shoppinglist.cocktails.Cocktail;
-
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 
 public class Shoppinglist{
 
     private UUID shoppingListId;
     private String name;
-    private ArrayList<Cocktail> cocktails = new ArrayList<>();
+//    private List<Cocktail> cocktails = new ArrayList<>();
+    private List<String> ingredients;
+
 
     public Shoppinglist(String name){
         this.name = name;
@@ -19,6 +20,12 @@ public class Shoppinglist{
     public Shoppinglist(UUID shoppingListId){
         this.name = "No_Name";
         this.shoppingListId = shoppingListId;
+    }
+
+    public Shoppinglist(UUID shoppingListId, String name, List<String> ingredients ){
+        this.shoppingListId = shoppingListId;
+        this.name = name;
+        this.ingredients = ingredients;
     }
 
 
@@ -39,9 +46,25 @@ public class Shoppinglist{
         this.name = name;
     }
 
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    /*public List<Cocktail> getCocktails() {
+        return cocktails;
+    }
+
+    public void setCocktails(List<Cocktail> cocktails) {
+        this.cocktails = cocktails;
+    }
+
     public List<Cocktail> addCocktails(List<Cocktail> cocktailsIn) {
         return cocktailsIn;
     }
-
+*/
 
 }
