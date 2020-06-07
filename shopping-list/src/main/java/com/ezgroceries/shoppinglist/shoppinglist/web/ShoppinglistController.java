@@ -31,7 +31,7 @@ public class ShoppinglistController {
     }
 
     //Return a shopping list
-    @GetMapping(value = "/shopping-lists/{listId}")
+    @GetMapping(value = "/shopping-lists/{listId}", produces = "application/json")
     public Shoppinglist findShoppinglist(@PathVariable UUID listId) {
         Shoppinglist returnlist = null;
         for (Shoppinglist shl : list) {
