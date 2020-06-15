@@ -8,13 +8,13 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "SHOPPING_LIST")
+@Table(name = "shopping_list")
 public class ShoppinglistEntity {
 
     @Id
-    @Column(name="ID")
+    @Column(name="id")
     private UUID ID;
-    @Column(name="NAME")
+    @Column(name="name")
     private String NAME;
 
 
