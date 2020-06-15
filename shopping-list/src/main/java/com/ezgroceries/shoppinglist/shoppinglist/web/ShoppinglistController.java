@@ -3,6 +3,9 @@ package com.ezgroceries.shoppinglist.shoppinglist.web;
 
 import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 import com.ezgroceries.shoppinglist.shoppinglist.Shoppinglist;
+import com.ezgroceries.shoppinglist.shoppinglist.ShoppinglistName;
+import com.ezgroceries.shoppinglist.shoppinglist.ShoppinglistService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +16,18 @@ import java.util.UUID;
 @RestController
 public class ShoppinglistController {
 
+    @Autowired
+    private ShoppinglistService shoppinglistService;
+
+
     public List<Shoppinglist> list = getDummyShoppinlist();
 
 
     //Create shopping list
     @PostMapping(value = "/shopping-lists")
     @ResponseStatus(HttpStatus.CREATED) // 201 return code
-    public Shoppinglist createShoppinglist(@RequestBody String name) {
-
-        return new Shoppinglist(name);
+    public ShoppinglistName createShoppinglist(@RequestBody ShoppinglistName name) {
+        return shoppinglistService.create(name.getName());
     }
 
     //Add Products to Shopping list
