@@ -1,7 +1,7 @@
 package com.ezgroceries.shoppinglist.shoppinglist.web;
 
 
-import com.ezgroceries.shoppinglist.cocktails.Cocktail;
+import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 import com.ezgroceries.shoppinglist.shoppinglist.Shoppinglist;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +26,8 @@ public class ShoppinglistController {
 
     //Add Products to Shopping list
     @PostMapping(value = "/shopping-lists/{listId}/cocktails")
-    public List<Cocktail> addProduct(@PathVariable UUID listId, @RequestBody List<Cocktail> cocktails) {
-        return cocktails;
+    public List<CocktailResource> addProduct(@PathVariable UUID listId, @RequestBody List<CocktailResource> cocktailResources) {
+        return cocktailResources;
     }
 
     //Return a shopping list

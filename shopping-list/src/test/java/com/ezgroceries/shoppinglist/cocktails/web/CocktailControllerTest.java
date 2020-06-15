@@ -31,7 +31,7 @@ class CocktailControllerTest {
 
     @Test
     public void testGetCockatils() throws Exception{
-      given(cocktailService.searchInDB("russian"))
+      given(cocktailService.searchExternalAPI("russian"))
             .willReturn(getdummyDBResponse());
 
         mockMvc.perform(get("/cocktails?search=russian")
@@ -40,7 +40,7 @@ class CocktailControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", hasSize(2)));
 
-        verify(cocktailService).searchInDB("russian");
+        verify(cocktailService).searchExternalAPI("russian");
 
     }
 

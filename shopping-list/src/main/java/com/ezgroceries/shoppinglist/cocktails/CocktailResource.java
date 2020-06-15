@@ -3,7 +3,7 @@ package com.ezgroceries.shoppinglist.cocktails;
 import java.util.List;
 import java.util.UUID;
 
-public class Cocktail {
+public class CocktailResource {
 
     private UUID cocktailId;
     private String name;
@@ -13,7 +13,7 @@ public class Cocktail {
     private List ingredients;
 
 
-    public Cocktail(UUID cocktailId, String name, String glass, String instructions, String image, List ingredients ) {
+    public CocktailResource(UUID cocktailId, String name, String glass, String instructions, String image, List ingredients ) {
         this.cocktailId = cocktailId;
         this.name = name;
         this.glass = glass;
