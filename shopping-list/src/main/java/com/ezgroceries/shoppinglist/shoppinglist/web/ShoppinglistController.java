@@ -33,6 +33,7 @@ public class ShoppinglistController {
     //Add Products to Shopping list
     @PostMapping(value = "/shopping-lists/{listId}/cocktails")
     public List<CocktailResource> addProduct(@PathVariable UUID listId, @RequestBody List<CocktailResource> cocktailResources) {
+        shoppinglistService.addCocktails(listId,cocktailResources);
         return cocktailResources;
     }
 

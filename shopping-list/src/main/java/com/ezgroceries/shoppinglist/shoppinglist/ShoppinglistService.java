@@ -1,8 +1,10 @@
 package com.ezgroceries.shoppinglist.shoppinglist;
 
 
+import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -25,5 +27,8 @@ public class ShoppinglistService {
     }
 
 
+    public void addCocktails(UUID listId, List<CocktailResource> cocktailResources) {
 
+
+    }
 }
