@@ -40,13 +40,7 @@ public class ShoppinglistController {
     //Return a shopping list
     @GetMapping(value = "/shopping-lists/{listId}")
     public Shoppinglist findShoppinglist(@PathVariable UUID listId) {
-        Shoppinglist returnlist = null;
-        for (Shoppinglist shl : list) {
-            if (shl.getShoppingListId().equals(listId)) {
-                returnlist = shl;
-            }
-        }
-        return returnlist;
+        return shoppinglistService.searchShoppinglist(listId);
     }
 
 

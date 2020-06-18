@@ -1,10 +1,12 @@
 package com.ezgroceries.shoppinglist.shoppinglist;
 
 
+import com.ezgroceries.shoppinglist.cocktails.CocktailEntity;
 import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 import com.ezgroceries.shoppinglist.cocktails.CocktailService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +22,7 @@ public class ShoppinglistService {
         this.cocktailService = cocktailService;
     }
 
-    public ShoppinglistName create(String name){
+    public ShoppinglistName create(String name) {
         ShoppinglistName shoppinglistName = new ShoppinglistName(name);
         ShoppinglistEntity entity = new ShoppinglistEntity();
         entity.setID(UUID.randomUUID());
@@ -35,5 +37,17 @@ public class ShoppinglistService {
         //CocktailResource omzetten naar CocktailEntity
         shoppinglistEntity.setCocktails(cocktailService.transformCocktail(cocktailResources));
         shoppinglistRepository.save(shoppinglistEntity);
+    }
+
+
+    public Shoppinglist searchShoppinglist(UUID id) {
+        ShoppinglistEntity shoppinglist = shoppinglistRepository.findByID(id);
+        List<CocktailEntity> drinks = shoppinglist.getCocktails();
+        List<String> ingredients = new ArrayList<>();
+        for (CocktailEntity tmp : drinks) {
+            ingredients.addAll(tmp.getINGREDIENTS());
+        }
+        Shoppinglist responsList = new Shoppinglist(shoppinglist.getID(), shoppinglist.getNAME(), ingredients);
+        return responsList;
     }
 }
