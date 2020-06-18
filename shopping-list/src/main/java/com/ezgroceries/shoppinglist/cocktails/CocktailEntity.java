@@ -12,9 +12,6 @@ public class CocktailEntity{
 
     @Id
     @Column(name="id")
-  /*  @JoinTable(name = "cocktail_shopping_list",
-            joinColumns =
-                    { @JoinColumn(name = "id", referencedColumnName = "cocktail_id") })*/
     private UUID ID;
     @Column(name="id_drink")
     private String idDrink;

@@ -100,4 +100,12 @@ public class CocktailService {
         return list;
     }
 
+    public List<CocktailEntity> transformCocktail(List<CocktailResource> resources){
+        List<CocktailEntity> Entities = resources.stream().map(temp -> {
+            CocktailEntity obj = cocktailRepository.findById(temp.getCocktailId());
+            return obj;
+        }).collect(Collectors.toList());
+        return Entities;
+    }
+
 }
