@@ -42,12 +42,23 @@ public class ShoppinglistService {
 
     public Shoppinglist searchShoppinglist(UUID id) {
         ShoppinglistEntity shoppinglist = shoppinglistRepository.findByID(id);
-        List<CocktailEntity> drinks = shoppinglist.getCocktails();
+        Shoppinglist responsList = new Shoppinglist(shoppinglist.getID(), shoppinglist.getNAME(), cocktailsToIngredients(shoppinglist.getCocktails()));
+        return responsList;
+    }
+
+    public List<Shoppinglist> getAllLists(){
+        List<Shoppinglist> responseList= new ArrayList<>();
+        for (ShoppinglistEntity tmp : shoppinglistRepository.findAll()) {
+            responseList.add(new Shoppinglist(tmp.getID(),tmp.getNAME(),cocktailsToIngredients(tmp.getCocktails())));
+        }
+    return responseList;
+    }
+
+    private List<String> cocktailsToIngredients(List<CocktailEntity> drinks){
         List<String> ingredients = new ArrayList<>();
         for (CocktailEntity tmp : drinks) {
             ingredients.addAll(tmp.getINGREDIENTS());
         }
-        Shoppinglist responsList = new Shoppinglist(shoppinglist.getID(), shoppinglist.getNAME(), ingredients);
-        return responsList;
+        return ingredients;
     }
 }

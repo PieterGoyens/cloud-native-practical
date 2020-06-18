@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,9 +17,6 @@ public class ShoppinglistController {
 
     @Autowired
     private ShoppinglistService shoppinglistService;
-
-
-    public List<Shoppinglist> list = getDummyShoppinlist();
 
 
     //Create shopping list
@@ -48,24 +44,8 @@ public class ShoppinglistController {
     //Return all shopping lists
     @GetMapping(value = "/shopping-lists")
     public List<Shoppinglist> getShoppinglists() {
-        return list;
+        return shoppinglistService.getAllLists();
     }
-
-
-
-    private List<Shoppinglist> getDummyShoppinlist() {
-        return Arrays.asList(
-                new Shoppinglist(
-                        UUID.fromString("90689338-499a-4c49-af90-f1e73068ad4f"),"Stephanie's birthday",
-                        Arrays.asList("Triple sec", "Lime juice", "Salt","Blue Curacao")
-                    ),
-                new Shoppinglist(
-                        UUID.fromString("6c7d09c2-8a25-4d54-a979-25ae779d2465"),"My Birthday",
-                        Arrays.asList("Triple sec", "Lime juice", "Salt","Blue Curacao")
-                    )
-        );
-    }
-
 
 
 }
