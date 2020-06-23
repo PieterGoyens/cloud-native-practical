@@ -34,6 +34,8 @@ public class CocktailDBResponse {
         private String instructions;
         private String image_link;
 
+        public DrinkResource(){}
+
 
         public DrinkResource(String idDrink, String strDrink, String strGlass, String strInstructions, String strDrinkThumb, String strIngredient1, String strIngredient2,
                              String strIngredient3, String strIngredient4, String strIngredient5, String strIngredient6, String strIngredient7, String strIngredient8, String strIngredient9,
