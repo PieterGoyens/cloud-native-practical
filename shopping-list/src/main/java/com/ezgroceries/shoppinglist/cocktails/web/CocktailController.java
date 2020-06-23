@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.cocktails.web;
 
-import com.ezgroceries.shoppinglist.cocktails.Cocktail;
+import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
 import com.ezgroceries.shoppinglist.cocktails.CocktailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ public class CocktailController {
     private CocktailService cocktailService;
 
     @GetMapping
-    public List<Cocktail> getCocktails(@RequestParam String search) {
+    public List<CocktailResource> getCocktails(@RequestParam String search) {
         return cocktailService.searchCocktails(search);
     }
 
