@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.shoppinglist;
+package com.ezgroceries.shoppinglist.shoppinglist.persistence;
 
 import org.springframework.data.repository.Repository;
 

@@ -1,9 +1,13 @@
-package com.ezgroceries.shoppinglist.shoppinglist;
+package com.ezgroceries.shoppinglist.shoppinglist.services;
 
 
-import com.ezgroceries.shoppinglist.cocktails.CocktailEntity;
-import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
-import com.ezgroceries.shoppinglist.cocktails.CocktailService;
+import com.ezgroceries.shoppinglist.cocktails.persistence.CocktailEntity;
+import com.ezgroceries.shoppinglist.cocktails.controllers.CocktailResource;
+import com.ezgroceries.shoppinglist.cocktails.services.CocktailService;
+import com.ezgroceries.shoppinglist.shoppinglist.persistence.ShoppinglistEntity;
+import com.ezgroceries.shoppinglist.shoppinglist.persistence.ShoppinglistRepository;
+import com.ezgroceries.shoppinglist.shoppinglist.controllers.Shoppinglist;
+import com.ezgroceries.shoppinglist.shoppinglist.controllers.ShoppinglistName;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

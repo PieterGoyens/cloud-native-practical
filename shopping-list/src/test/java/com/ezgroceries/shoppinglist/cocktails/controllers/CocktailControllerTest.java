@@ -1,7 +1,7 @@
-package com.ezgroceries.shoppinglist.cocktails.web;
+package com.ezgroceries.shoppinglist.cocktails.controllers;
 
-import com.ezgroceries.shoppinglist.cocktails.CocktailDBResponse;
-import com.ezgroceries.shoppinglist.cocktails.CocktailService;
+import com.ezgroceries.shoppinglist.cocktails.services.CocktailDBResponse;
+import com.ezgroceries.shoppinglist.cocktails.services.CocktailService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
