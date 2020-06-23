@@ -1,6 +1,6 @@
-package com.ezgroceries.shoppinglist.cocktails;
+package com.ezgroceries.shoppinglist.cocktails.persistence;
 
-import com.ezgroceries.shoppinglist.StringSetConverter;
+import com.ezgroceries.shoppinglist.utils.StringSetConverter;
 
 import javax.persistence.*;
 import java.util.Set;
