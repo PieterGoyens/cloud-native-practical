@@ -72,6 +72,9 @@ public class CocktailService {
                         drinkResource.getStrIngredient2(),drinkResource.getStrIngredient3(),drinkResource.getStrIngredient4(),drinkResource.getStrIngredient5(),
                         drinkResource.getStrIngredient6(),drinkResource.getStrIngredient7(),drinkResource.getStrIngredient8(),drinkResource.getStrIngredient9(),
                         drinkResource.getStrIngredient10()).collect(Collectors.toSet()));
+                newCocktailEntity.setGLASS(drinkResource.getStrGlass());
+                newCocktailEntity.setINSTRUCTIONS(drinkResource.getStrInstructions());
+                newCocktailEntity.setIMAGE_LINK(drinkResource.getStrDrinkThumb());
                 cocktailEntity = cocktailRepository.save(newCocktailEntity);
             }
             return cocktailEntity;

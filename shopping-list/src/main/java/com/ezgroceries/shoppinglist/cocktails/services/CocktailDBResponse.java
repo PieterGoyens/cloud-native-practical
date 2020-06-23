@@ -30,11 +30,14 @@ public class CocktailDBResponse {
         private String strIngredient8;
         private String strIngredient9;
         private String strIngredient10;
+        private String glass;
+        private String instructions;
+        private String image_link;
 
 
         public DrinkResource(String idDrink, String strDrink, String strGlass, String strInstructions, String strDrinkThumb, String strIngredient1, String strIngredient2,
                              String strIngredient3, String strIngredient4, String strIngredient5, String strIngredient6, String strIngredient7, String strIngredient8, String strIngredient9,
-                             String strIngredient10){
+                             String strIngredient10, String glass, String instructions, String image_link){
 
             this.idDrink = idDrink;
             this.strDrink = strDrink;
@@ -175,6 +178,7 @@ public class CocktailDBResponse {
         public void setStrIngredient10(String strIngredient10) {
             this.strIngredient10 = strIngredient10;
         }
+
 
     }
 

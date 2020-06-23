@@ -20,7 +20,12 @@ public class CocktailEntity{
     @Column(name="ingredients")
     @Convert(converter = StringSetConverter.class)
     private Set<String> INGREDIENTS;
-
+    @Column(name="glass")
+    private String GLASS;
+    @Column(name="instructions")
+    private String INSTRUCTIONS;
+    @Column(name="image_link")
+    private String IMAGE_LINK;
 
     public UUID getID() {
         return ID;
@@ -52,5 +57,29 @@ public class CocktailEntity{
 
     public void setINGREDIENTS(Set<String> INGREDIENTS) {
         this.INGREDIENTS = INGREDIENTS;
+    }
+
+    public String getGLASS() {
+        return GLASS;
+    }
+
+    public void setGLASS(String GLASS) {
+        this.GLASS = GLASS;
+    }
+
+    public String getINSTRUCTIONS() {
+        return INSTRUCTIONS;
+    }
+
+    public void setINSTRUCTIONS(String INSTRUCTIONS) {
+        this.INSTRUCTIONS = INSTRUCTIONS;
+    }
+
+    public String getIMAGE_LINK() {
+        return IMAGE_LINK;
+    }
+
+    public void setIMAGE_LINK(String IMAGE_LINK) {
+        this.IMAGE_LINK = IMAGE_LINK;
     }
 }

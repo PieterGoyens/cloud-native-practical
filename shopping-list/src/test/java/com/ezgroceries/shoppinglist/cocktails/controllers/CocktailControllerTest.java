@@ -50,11 +50,11 @@ class CocktailControllerTest {
                 new CocktailDBResponse.DrinkResource("11102","Black Russian","Old-fashioned glass",
                         "Pour the ingredients into an old fashioned glass filled with ice cubes. Stir gently.",
                         "https://www.thecocktaildb.com/images/media/drink/2k5gbb1504367689.jpg",
-                        "Coffee liqueur","Vodka",null,null,null,null,null,null,null,null),
+                        "Coffee liqueur","Vodka",null,null,null,null,null,null,null,null, null, null, null),
                 new CocktailDBResponse.DrinkResource("12528","White Russian","Old-fashioned glass",
                         "Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.",
                         "https://www.thecocktaildb.com/images/media/drink/vsrupw1472405732.jpg",
-                        "Vodka","Coffee liqueur","Light cream",null,null,null,null,null,null,null)
+                        "Vodka","Coffee liqueur","Light cream",null,null,null,null,null,null,null, null, null, null)
                         );
     }
 
