@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.cocktails;
+package com.ezgroceries.shoppinglist.cocktails.services;
 
 
 import org.springframework.cloud.openfeign.FeignClient;

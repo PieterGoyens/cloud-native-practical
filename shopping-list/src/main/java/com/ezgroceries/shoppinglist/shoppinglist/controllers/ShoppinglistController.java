@@ -1,10 +1,8 @@
-package com.ezgroceries.shoppinglist.shoppinglist.web;
+package com.ezgroceries.shoppinglist.shoppinglist.controllers;
 
 
-import com.ezgroceries.shoppinglist.cocktails.CocktailResource;
-import com.ezgroceries.shoppinglist.shoppinglist.Shoppinglist;
-import com.ezgroceries.shoppinglist.shoppinglist.ShoppinglistName;
-import com.ezgroceries.shoppinglist.shoppinglist.ShoppinglistService;
+import com.ezgroceries.shoppinglist.cocktails.controllers.CocktailResource;
+import com.ezgroceries.shoppinglist.shoppinglist.services.ShoppinglistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

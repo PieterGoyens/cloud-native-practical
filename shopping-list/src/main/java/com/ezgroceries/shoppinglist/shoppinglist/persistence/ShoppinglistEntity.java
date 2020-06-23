@@ -1,7 +1,7 @@
-package com.ezgroceries.shoppinglist.shoppinglist;
+package com.ezgroceries.shoppinglist.shoppinglist.persistence;
 
 
-import com.ezgroceries.shoppinglist.cocktails.CocktailEntity;
+import com.ezgroceries.shoppinglist.cocktails.persistence.CocktailEntity;
 
 import javax.persistence.*;
 import java.util.List;

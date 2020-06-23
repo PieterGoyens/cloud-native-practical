@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.shoppinglist;
+package com.ezgroceries.shoppinglist.shoppinglist.controllers;
 
 public class ShoppinglistName {
 

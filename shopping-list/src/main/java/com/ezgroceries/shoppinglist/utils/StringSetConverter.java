@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist;
+package com.ezgroceries.shoppinglist.utils;
 
 import org.springframework.util.CollectionUtils;
 
