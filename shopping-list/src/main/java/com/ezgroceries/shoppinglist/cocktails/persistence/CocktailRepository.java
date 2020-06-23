@@ -7,10 +7,12 @@ import java.util.UUID;
 
 public interface CocktailRepository extends Repository<CocktailEntity, UUID> {
 
-        public List<CocktailEntity> findByIdDrinkIn(List<String> id);
+        List<CocktailEntity> findByIdDrinkIn(List<String> id);
 
-        public CocktailEntity findById(UUID id);
+        CocktailEntity findById(UUID id);
 
-        public CocktailEntity save(CocktailEntity entity);
+        List<CocktailEntity> findByNameContainingIgnoreCase(String input);
+
+        CocktailEntity save(CocktailEntity entity);
 
 }
