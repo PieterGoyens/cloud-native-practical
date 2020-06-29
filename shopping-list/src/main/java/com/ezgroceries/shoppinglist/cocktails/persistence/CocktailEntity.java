@@ -12,11 +12,11 @@ public class CocktailEntity{
 
     @Id
     @Column(name="id")
-    private UUID ID;
+    private UUID id;
     @Column(name="id_drink")
     private String idDrink;
     @Column(name="name")
-    private String NAME;
+    private String name;
     @Column(name="ingredients")
     @Convert(converter = StringSetConverter.class)
     private Set<String> INGREDIENTS;
@@ -27,12 +27,12 @@ public class CocktailEntity{
     @Column(name="image_link")
     private String IMAGE_LINK;
 
-    public UUID getID() {
-        return ID;
+    public UUID getId() {
+        return id;
     }
 
-    public void setID(UUID ID) {
-        this.ID = ID;
+    public void setId(UUID ID) {
+        this.id = ID;
     }
 
     public String getIdDrink() {
@@ -44,11 +44,11 @@ public class CocktailEntity{
     }
 
     public String getNAME() {
-        return NAME;
+        return name;
     }
 
     public void setNAME(String NAME) {
-        this.NAME = NAME;
+        this.name = NAME;
     }
 
     public Set<String> getINGREDIENTS() {
