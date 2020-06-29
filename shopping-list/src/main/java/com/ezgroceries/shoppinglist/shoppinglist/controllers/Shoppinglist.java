@@ -54,17 +54,6 @@ public class Shoppinglist{
         this.ingredients = ingredients;
     }
 
-    /*public List<CocktailResource> getCocktails() {
-        return cocktails;
-    }
 
-    public void setCocktails(List<CocktailResource> cocktails) {
-        this.cocktails = cocktails;
-    }
-
-    public List<CocktailResource> addCocktails(List<CocktailResource> cocktailsIn) {
-        return cocktailsIn;
-    }
-*/
 
 }

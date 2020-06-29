@@ -28,23 +28,9 @@ public class CocktailService {
 
     public List<CocktailResource> searchCocktails(String search) {
         List<CocktailDBResponse.DrinkResource> responses;
-//        List<CocktailResource> returnlist = new ArrayList<CocktailResource>();
         responses = searchExternalAPI(search);   //Zoek op de Externe API alles resultaten.
         return mergeCocktails(responses);   //Check of we die resultaten allemaal lokaal hebben, anders mergen.
 
-
-
-   /*     for (CocktailDBResponse.DrinkResource rsc: responses) {
-            returnlist.add(new CocktailResource(UUID.randomUUID(),
-                    rsc.getStrDrink(),
-                    rsc.getStrGlass(),
-                    rsc.getStrInstructions(),
-                    rsc.getStrDrinkThumb(),
-                    Arrays.asList(rsc.getStrIngredient1(),rsc.getStrIngredient2(),rsc.getStrIngredient3(),rsc.getStrIngredient4(),
-                            rsc.getStrIngredient5(),rsc.getStrIngredient6(),rsc.getStrIngredient7(),rsc.getStrIngredient8(),
-                            rsc.getStrIngredient9(),rsc.getStrIngredient10()))
-            );
-        }*/
     }
 
 
@@ -65,7 +51,7 @@ public class CocktailService {
             CocktailEntity cocktailEntity = existingEntityMap.get(drinkResource.getIdDrink());
             if (cocktailEntity == null) {
                 CocktailEntity newCocktailEntity = new CocktailEntity();
-                newCocktailEntity.setID(UUID.randomUUID());
+                newCocktailEntity.setId(UUID.randomUUID());
                 newCocktailEntity.setIdDrink(drinkResource.getIdDrink());
                 newCocktailEntity.setNAME(drinkResource.getStrDrink());
                 newCocktailEntity.setINGREDIENTS(Stream.of(drinkResource.getStrIngredient1(),
@@ -86,7 +72,7 @@ public class CocktailService {
 
 
     private List<CocktailResource> mergeAndTransform(List<CocktailDBResponse.DrinkResource> drinks, Map<String, CocktailEntity> allEntityMap) {
-        return drinks.stream().map(drinkResource -> new CocktailResource(allEntityMap.get(drinkResource.getIdDrink()).getID(), drinkResource.getStrDrink(), drinkResource.getStrGlass(),
+        return drinks.stream().map(drinkResource -> new CocktailResource(allEntityMap.get(drinkResource.getIdDrink()).getId(), drinkResource.getStrDrink(), drinkResource.getStrGlass(),
                 drinkResource.getStrInstructions(), drinkResource.getStrDrinkThumb(), getIngredients(drinkResource))).collect(Collectors.toList());
     }
 
